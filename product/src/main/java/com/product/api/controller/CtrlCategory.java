@@ -4,6 +4,7 @@ import java.util.List;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,10 +25,12 @@ import com.product.api.dto.DtoCategoryIn;
 import com.product.api.entity.Category;
 
 import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 
 @RestController 
 @RequestMapping("/category") 
+@Tag(name = "Categoría", description = "Catálogo de categorias")
 public class CtrlCategory {
 	
 	@Autowired

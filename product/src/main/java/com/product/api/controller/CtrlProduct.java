@@ -2,6 +2,7 @@ package com.product.api.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +25,11 @@ import com.product.exception.ApiException;
 
 import jakarta.validation.Valid;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/product")
+@Tag(name = "Producto", description = "Administración de productos")
 public class CtrlProduct {
 
 	@Autowired
@@ -36,7 +40,7 @@ public class CtrlProduct {
 		return svc.getProducts();
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/{id}")	
 	public ResponseEntity<DtoProductOut> getProduct(@PathVariable Integer id) {
 		return svc.getProduct(id);
 	}
